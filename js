@@ -1,16 +1,15 @@
-// pull from different file
+
 const secret_api ='ENTER_YOUR_API'
 const bypass_cors_url = 'https://cors-anywhere.herokuapp.com/'
 const api_uri = 'https://geo.ipify.org/api/'
 let current_verion = 'v1'
 
-// elements to update 
+
 let current_ip = document.getElementById('current_ip')
 let current_town = document.getElementById('current_town')
 let current_zone = document.getElementById('current_zone')
 let current_isp = document.getElementById('current_isp')
 
-// form elements 
 const entered_ip = document.getElementById('ip_address') 
 const search_btn = document.getElementById('search_btn')
 
@@ -50,7 +49,6 @@ getIPDetails = (default_ip) => {
         current_zone.innerHTML = data.location.timezone
         current_isp.innerHTML = data.isp
 
-        // update map marker 
         updateMarker([data.location.lat, data.location.lng])
     })
     .catch(error => {
